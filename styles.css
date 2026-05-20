@@ -280,6 +280,7 @@ li a:hover:not(a[aria-current="page"]) {
     height: var(--height);
     background: linear-gradient(to top, #7c3aed, #a78bfa);
     border-radius: 5px 5px 0 0;
+    animation: grow-bar 2s ease-out;
 }
 
 .bar-highlight {
@@ -292,7 +293,16 @@ li a:hover:not(a[aria-current="page"]) {
      margin-bottom: 10px;
 }
 
+@keyframes grow-bar {
 
+    0% {
+height: 0;
+    }
+
+    100% {
+height: var(--height);
+    }
+}
 
 
 /* recent activity */
