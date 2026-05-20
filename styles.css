@@ -19,6 +19,7 @@ body {
     background: var(--color-bg);
     font-family: 'DM Sans', sans-serif;
 }
+/* side bar */
 
 header {
     display: flex;
@@ -103,4 +104,104 @@ li a:hover:not(a[aria-current="page"]) {
 
 .nav-icon{
     margin-right: 6px
+}
+
+/* main content */
+
+.main-content{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: 
+    "topbar topbar"
+    "stats stats"
+    "chart recent";
+    gap: 20px;
+   max-width: 100%;
+   margin: 0 auto;
+   
+}
+
+/* top bar main container */
+.topbar__container {
+    grid-area: topbar;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+.topbar-title {
+    color: var(--color-main);
+    font-size: 1.4rem;
+    padding-left: 20px;
+}
+
+.search  {
+    display: flex;
+    padding: 10px 20px; 
+}
+
+.search input {
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 20px ;
+    color: var(--color-main);
+    font-size: 0.9rem;
+    width: 200px;
+    height: 40px;
+    padding: 0 15px;
+    text-decoration: none;
+}
+
+.topbar.text {
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar-text p {
+    color: var(--color-glasstext);
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+/*stats container */
+
+.stats {
+    grid-area: stats;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+                  /*stat cards */
+.stat-card {
+    flex-direction: column;
+    display: flex;
+    flex: 1;
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
+/* chart panel */
+.chart-panel {
+    grid-area: chart;
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+/* recent activity */
+.recent-activity {
+    grid-area: recent;
+    background: var(--color-glass);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    padding: 20px;
 }
