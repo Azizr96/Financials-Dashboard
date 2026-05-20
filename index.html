@@ -51,31 +51,31 @@
 <section class="stats">
 
     <!-- revenue -->
-     <article class="stat-card"> 
+     <article class="stat-card" style="--bar-width: 80%; --bar-color: limegreen;"> 
 <h3 class="stat-label">Revenue</h3>
 <data class="stat-value" value="12500" >$12,500</data>
-<data class="stat-change" value="13.5%" > ↑ 13.5%</data>
+<data class="stat-change" value="13.5%" > ↑ 13.5% this month</data>
 
      </article>
 
 <!-- users -->
-     <article class="stat-card"> 
+     <article class="stat-card" style="--bar-width: 70%; --bar-color: limegreen;"> 
 <h3 class="stat-label">Users</h3>
 <data class="stat-value" value="1234" >1,234</data>
-<data class="stat-change" value="8.1%" >↑ 8.1%</data>
+<data class="stat-change" value="8.1%" >↑ 8.1% this month</data>
 
      </article>
 
      <!-- orders -->
-     <article class="stat-card"> 
+     <article class="stat-card" style="--bar-width: 30%; --bar-color: red;"> 
 <h3 class="stat-label">Orders</h3>
 <data class="stat-value" value="567" >567</data>
-<data class="stat-change" value="3.2%" >↓ 3.2%</data>
+<data class="stat-change" value="3.2%" >↓ 3.2% this month</data>
 
      </article>
 
      <!--uptime-->
-     <article class="stat-card"> 
+     <article class="stat-card" style="--bar-width: 99.9%; --bar-color: limegreen;"> 
 <h3 class="stat-label">Uptime</h3>
 <data class="stat-value" value="99.9" >99.9%</data>
 <data class="stat-change" value="stable">↑ stable</data>
@@ -86,26 +86,36 @@
    <h3 class="chart-label">Weekly Revenue</h3>
 
    <ul class="barchart">
-    <li class="bar" style="--height: 80%;" aria-label="Monday: $10,000">
-<p class="bar-label">Mon</p>
+    <li class="bar-wrapper"  aria-label="Monday: $10,000">
+       <div class="bar" style="--height: 80%;"></div>
+        <p class="bar-label">Mon</p>
     </li>
-    <li class="bar" style="--height: 60%;" aria-label="Tuesday: $7,500">
-<p class="bar-label">Tue</p>    
+
+    <li class="bar-wrapper"  aria-label="Tuesday: $7,500">
+<div class="bar" style="--height: 60%;" ></div>
+        <p class="bar-label">Tue</p>    
     </li>
-    <li class="bar" style="--height: 90%;" aria-label="Wednesday: $12,000">
-<p class="bar-label">Wed</p>
+    
+    <li class="bar-wrapper"  aria-label="Wednesday: $12,000">
+<div class="bar" style="--height: 90%;"></div>
+        <p class="bar-label">Wed</p>
     </li>
-    <li class="bar" style="--height: 70%;" aria-label="Thursday: $8,500">
-<p class="bar-label">Thu</p>
+
+    <li class="bar-wrapper"  aria-label="Thursday: $8,500">
+<div class="bar" style="--height: 70%;"></div>
+        <p class="bar-label">Thu</p>
     </li>
-    <li class="bar" style="--height: 100%;" aria-label="Friday: $15,000">
-<p class="bar-label">Fri</p>
+    <li class="bar-wrapper bar-highlight" aria-label="Friday: $15,000" >
+<div class="bar" style="--height: 100%; --bar-color: linear-gradient(to top, #0891b2, #22d3ee)"></div>
+        <p class="bar-label">Fri</p>
     </li>
-    <li class="bar" style="--height: 50%;" aria-label="Saturday: $5,000">
-<p class="bar-label">Sat</p>
+    <li class="bar-wrapper" aria-label="Saturday: $5,000" >
+<div class="bar" style="--height: 50%;"></div>
+        <p class="bar-label">Sat</p>
     </li>
-    <li class="bar" style="--height: 40%;" aria-label="Sunday: $4,000">
-<p class="bar-label">Sun</p>
+    <li class="bar-wrapper" aria-label="Sunday: $4,000">
+<div class="bar" style="--height: 40%"></div>
+        <p class="bar-label">Sun</p>
     </li>
    </ul>    
 </section>

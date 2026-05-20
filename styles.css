@@ -5,6 +5,7 @@
     --color-main: #fff;
     --color-glasstext: rgba(255, 255, 255, 0.6);
     --color-glass2: rgba(255, 255, 255, 0.4);
+   
 }
 
 * {
@@ -179,15 +180,73 @@ li a:hover:not(a[aria-current="page"]) {
 .stat-card {
     flex-direction: column;
     display: flex;
+    justify-content: space-between;
     flex: 1;
     background: var(--color-glass);
     border: 1px solid var(--color-border);
     border-radius: 20px;
     padding: 20px;
+    position:relative
 }
 
+.stat-card .stat-label {
+    color: var(--color-glasstext);
+    font-size: 0.8rem;
+    font-weight: normal;
+    text-transform: uppercase;  
+    letter-spacing: 0.5px;
+}
 
+.stat-card .stat-value {
+    color: var(--color-main);
+    font-size: 1.7rem;
+    font-weight: bold;
+}
 
+.stat-card .stat-change {
+    color: limegreen;
+    font-size: 0.8rem;
+    
+}
+
+.stat-card .stat-change.down {
+    color: red;
+    font-size: 0.8rem;
+}
+
+.stat-card::after {
+    content: "";
+    display: block;
+    margin-top: 10px;
+    height: 4px;
+    border-radius: 2px;
+    animation: status-bar 2s ease-out 1;
+    animation-fill-mode: forwards;
+}
+.stat-card::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 21px;;
+    width: 79%; 
+    height: 4px;
+    margin-top: 10px;
+    background: var(--color-glass);
+    border-radius: 2px;
+    
+}
+
+@keyframes status-bar {
+    0% {
+        width: 0;
+        background: var(--bar-color);
+    }
+    
+    100% {
+        width: var(--bar-width);
+        background: var(--bar-color);
+    }
+}
 /* chart panel */
 .chart-panel {
     grid-area: chart;
@@ -196,6 +255,45 @@ li a:hover:not(a[aria-current="page"]) {
     border-radius: 20px;
     padding: 20px;
 }
+
+.barchart {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 150px;
+    color: var(--color-glasstext);
+    font-size: 0.8rem;
+
+}
+.bar-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    gap: 5px;
+}
+.bar-wrapper .bar {
+    list-style: none;
+    margin: 0 5px;
+    width: 30px;
+    height: var(--height);
+    background: linear-gradient(to top, #7c3aed, #a78bfa);
+    border-radius: 5px 5px 0 0;
+}
+
+.bar-highlight {
+    background: var(--bar-color);
+}
+
+.chart-label {
+    color: var(--color-main);
+    font-size: 0.9rem;
+     margin-bottom: 10px;
+}
+
+
+
 
 /* recent activity */
 .recent-activity {
