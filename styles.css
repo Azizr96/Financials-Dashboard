@@ -26,6 +26,7 @@ header {
     display: flex;
     flex-direction: column;
     padding: 40px; 
+    align-items: center;
     background: var(--color-glass);
     border: 1px solid var(--color-border);
     border-radius: 20px;
@@ -172,8 +173,8 @@ li a:hover:not(a[aria-current="page"]) {
 
 .stats {
     grid-area: stats;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
                   /*stat cards */
@@ -181,7 +182,7 @@ li a:hover:not(a[aria-current="page"]) {
     flex-direction: column;
     display: flex;
     justify-content: space-between;
-    flex: 1;
+    min-height: 180px;
     background: var(--color-glass);
     border: 1px solid var(--color-border);
     border-radius: 20px;
@@ -236,6 +237,10 @@ li a:hover:not(a[aria-current="page"]) {
     
 }
 
+.stat-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
 @keyframes status-bar {
     0% {
         width: 0;
@@ -313,3 +318,101 @@ height: var(--height);
     border-radius: 20px;
     padding: 20px;
 }
+
+.activity-label {
+    color: var(--color-main);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+.activity-description {
+    color: var(--color-glasstext);
+    font-size: 0.9rem;
+    text-wrap: wrap;
+}
+.activity-time {
+    color: var(--color-glass2);
+    font-size: 0.7rem;
+}
+
+
+/* =========================
+TABLET
+========================= */
+
+@media (max-width: 992px) {
+    
+    .stats {
+    grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topbar__container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "topbar"
+        "stats"
+        "chart"
+        "recent";
+    }
+
+    .header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .navbar {
+    display: none;
+
+ }
+
+ .profile {    display: none;
+ }
+    .hamburger {
+        display: block;
+        align-self: flex-end;
+        margin: 20px;
+        cursor: pointer;
+        z-index: 1000;
+        background: transparent;
+        color: var(--color-main);   
+        border: none;
+        font-size: 1.5rem;
+}
+
+.hamburger:hover {
+    color: #a78bfa;}
+
+    .topbar__container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 10px;
+    }
+
+.stats {
+        display: grid;
+        grid-template-columns: 1fr; }
+
+
+}
+
+
+    
+
