@@ -5,6 +5,7 @@
     --color-main: #fff;
     --color-glasstext: rgba(255, 255, 255, 0.6);
     --color-glass2: rgba(255, 255, 255, 0.4);
+    --backdrop-filter: blur(20px);
    
 }
 
@@ -20,6 +21,57 @@ body {
     background: var(--color-bg);
     font-family: 'DM Sans', sans-serif;
 }
+
+/*floating orb in background */
+body::before, body::after {
+  content: '' ;
+  position: fixed; 
+  filter: blur(50px);
+  border-radius: 50%;
+   z-index: -1;
+  animation: drift 8s ease-in-out infinite alternate;
+  
+}
+body::before {
+height: 500px;
+width: 500px;
+background: radial-gradient(circle, #7c3aed55, transparent);
+top: -100px;
+left: -100px;
+
+
+
+}
+
+body::after {
+height: 400px;
+width: 400px;
+background: radial-gradient(circle, #06b6d455, transparent);
+bottom: -100px;
+right: -100px;
+animation-delay: 4s;
+}
+
+@keyframes drift {
+
+    from {
+        transform: translate(0,0) scale(1);
+    }
+    to {
+        transform: translate(40px, 60px) scale(1.1);
+    }
+}
+
+/* glassmorphism style on tiles 8*/
+
+.glass {
+background: var(--color-glass);
+    backdrop-filter: var(--backdrop-filter);
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+}
+
+
 /* side bar */
 
 header {
@@ -27,9 +79,7 @@ header {
     flex-direction: column;
     padding: 40px; 
     align-items: center;
-    background: var(--color-glass);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
+    
     
 }
 
@@ -130,9 +180,7 @@ li a:hover:not(a[aria-current="page"]) {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--color-glass);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
+   
 }
 
 .topbar-title {
@@ -183,9 +231,6 @@ li a:hover:not(a[aria-current="page"]) {
     display: flex;
     justify-content: space-between;
     min-height: 180px;
-    background: var(--color-glass);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
     padding: 20px;
     position:relative
 }
@@ -255,9 +300,6 @@ li a:hover:not(a[aria-current="page"]) {
 /* chart panel */
 .chart-panel {
     grid-area: chart;
-    background: var(--color-glass);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
     padding: 20px;
 }
 
@@ -286,9 +328,10 @@ li a:hover:not(a[aria-current="page"]) {
     background: linear-gradient(to top, #7c3aed, #a78bfa);
     border-radius: 5px 5px 0 0;
     animation: grow-bar 2s ease-out;
+    animation-fill-mode: forwards;
 }
 
-.bar-highlight {
+.bar-wrapper .bar-highlight {
     background: var(--bar-color);
 }
 
@@ -313,9 +356,6 @@ height: var(--height);
 /* recent activity */
 .recent-activity {
     grid-area: recent;
-    background: var(--color-glass);
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
     padding: 20px;
 }
 
