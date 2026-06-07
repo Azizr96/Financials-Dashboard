@@ -416,12 +416,34 @@ TABLET
         flex-direction: row;
         justify-content: space-between;
         padding: 20px;
+        position: relative;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
     }
 
     .navbar {
     display: none;
+    
 
  }
+
+    .navbar.open {
+        display: block;
+        position: absolute;
+        top: 100%;
+        width: 250px;
+        right: 0;
+        z-index: 1000;
+        background: var(--color-glass);
+        backdrop-filter: var(--backdrop-filter);
+         border: 1px solid var(--color-border);
+         border-radius: 20px;
+        padding: 20px;
+        text-align: center;
+        margin-right: 10px;
+        margin-top: 10px;
+
+    }
 
  .profile {    display: none;
  }
