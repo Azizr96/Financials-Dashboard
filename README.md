@@ -1,6 +1,6 @@
 # Financials Dashboard design
 
-This project was created for me to practice my HTML and CSS knowledge. On my learning journey i will add more features as my knowledge expands with javascript and other methids.
+This project was created for me to practice my HTML and CSS knowledge. On my learning journey i will add more features as my knowledge expands with javascript and other methods.
 
 ## Technologies used
 
